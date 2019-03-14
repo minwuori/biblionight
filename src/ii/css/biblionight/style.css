@@ -1,0 +1,336 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+#biblionight {
+  font-family: 'PT Sans', sans-serif; }
+  #biblionight a {
+    text-decoration: none; }
+  #biblionight .container {
+    margin: 0 auto;
+    width: 920px;
+    padding: 0 20px;
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  #biblionight .clearfix:after {
+    content: "";
+    display: table;
+    clear: both; }
+  #biblionight .text {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    width: 780px;
+    color: rgba(0, 0, 0, 0.8); }
+  #biblionight .accent {
+    font-weight: bold; }
+  #biblionight .underline {
+    text-decoration: underline; }
+  #biblionight .blue {
+    color: #2660AB; }
+  #biblionight .red {
+    color: #CC1D47; }
+  #biblionight .white {
+    color: #FFFFFF; }
+  #biblionight .mt_20 {
+    margin-top: 20px; }
+  #biblionight .mt_35 {
+    margin-top: 35px; }
+  #biblionight .mt_70 {
+    margin-top: 70px; }
+  #biblionight .mb_70 {
+    margin-bottom: 70px; }
+  #biblionight .title {
+    font-size: 30px;
+    font-weight: bold; }
+  #biblionight .main {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    height: 100vh; }
+  #biblionight .main__content {
+    -webkit-flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column; }
+    #biblionight .main__content .container {
+      -webkit-flex-grow: 1;
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+      height: 100%; }
+  #biblionight .main__footer {
+    height: 185px;
+    background-image: url("/ii/img/biblionight/bg2.png");
+    background-repeat: repeat-x; }
+    #biblionight .main__footer .container {
+      height: 100%; }
+    #biblionight .main__footer .text {
+      text-align: center;
+      font-size: 25px;
+      color: #fff;
+      font-weight: bold;
+      margin-top: 100px; }
+  #biblionight header {
+    background-color: #0060af;
+    height: 90px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    #biblionight header .container {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+  #biblionight .social__btns {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    #biblionight .social__btns a {
+      font-size: 14px;
+      width: 20px;
+      height: 20px;
+      background-image: url("/ii/img/biblionight/social.png");
+      background-repeat: no-repeat;
+      opacity: 0.5;
+      -webkit-transition: 0.2s;
+      -o-transition: 0.2s;
+      transition: 0.2s; }
+      #biblionight .social__btns a:hover {
+        opacity: 1;
+        -webkit-transition: 0.2s;
+        -o-transition: 0.2s;
+        transition: 0.2s; }
+  #biblionight .social__btn {
+    margin: 0;
+    margin-right: 15px;
+    padding: 0;
+    display: inline-block;
+    font-size: 0; }
+    #biblionight .social__btn:last-child {
+      margin-right: 0; }
+  #biblionight .social__btn_vk {
+    background-position: 0px 50%; }
+  #biblionight .social__btn_ok {
+    background-position: -49px 50%; }
+  #biblionight .social__btn_fb {
+    background-position: -97px 50%; }
+  #biblionight .social__btn_tw {
+    background-position: -145px 50%; }
+  #biblionight .social__btn_in {
+    background-position: -193px 50%; }
+  #biblionight .social__btn_yt {
+    background-position: -241px 50%; }
+  #biblionight .date {
+    width: 640px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  #biblionight .date__item {
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+    border: 3px solid #2660AB;
+    height: 135px;
+    width: 135px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  #biblionight .number {
+    font-size: 50px; }
+  #biblionight .month {
+    font-size: 20px; }
+  #biblionight .date__item_active {
+    border: none;
+    -webkit-box-shadow: 0px 6px 50px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 6px 50px 0px rgba(0, 0, 0, 0.1); }
+  #biblionight .date__item_after {
+    border: none;
+    background: #2660AB;
+    opacity: 0.08;
+    color: white; }
+  #biblionight .subscribe #notification {
+    margin-top: 20px;
+    margin-bottom: 95px; }
+  #biblionight .mail {
+    line-height: 50px;
+    width: 300px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0 10px;
+    border: 2px solid #2660AB;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    margin-bottom: 5px;
+    font-size: 18px; }
+    #biblionight .mail:focus {
+      outline: none; }
+  #biblionight .subscribeSend {
+    width: 190px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-size: 18px;
+    line-height: 50px;
+    color: #fff;
+    border: 1px solid #2660AB;
+    background-color: #2660AB;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    cursor: pointer;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+    margin-left: 30px; }
+    #biblionight .subscribeSend:focus {
+      outline: none; }
+  #biblionight .books {
+    background-color: #edf4fb; }
+  #biblionight .rules__text {
+    text-align: left;
+    list-style-type: none;
+    margin: 30px 0; }
+    #biblionight .rules__text li:before {
+      color: #2660AB;
+      content: "•";
+      padding-right: 5px; }
+  #biblionight .text__warning {
+    text-align: left; }
+  #biblionight .btn {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    line-height: 50px;
+    color: #fff;
+    padding: 0 30px;
+    border: 1px solid #2660AB;
+    background-color: #2660AB;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    cursor: pointer;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s; }
+  #biblionight .footer {
+    background-image: url("/ii/img/biblionight/bg.png");
+    background-repeat: repeat-x;
+    background-position: 0 -2px; }
+  #biblionight .footer .container {
+    padding-top: 80px;
+    margin-bottom: 0; }
+  #biblionight .footer__items {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%; }
+  #biblionight .footer__item {
+    display: inline-block;
+    margin-bottom: 20px; }
+  #biblionight .footer__item .name {
+    font-size: 18px;
+    color: #fff; }
+  #biblionight .footer__item .icon {
+    display: inline-block;
+    font-size: 14px;
+    width: 34px;
+    height: 34px;
+    background-image: url("/ii/img/biblionight/icons.png"); }
+  #biblionight .footer__item:nth-child(1) .icon {
+    background-position: 1px 0; }
+  #biblionight .footer__item:nth-child(2) .icon {
+    background-position: -37px 0; }
+  #biblionight .footer__item:nth-child(3) .icon {
+    background-position: -78px 0; }
+  #biblionight .footer__item:nth-child(4) .icon {
+    width: 30px;
+    background-position: -112px 0; }
+  #biblionight .footer__item:hover {
+    text-decoration: underline;
+    color: #FFFFFF; }
+  #biblionight .message {
+    position: absolute;
+    margin: 0;
+    color: #CC1D47; }
+  #biblionight .btn:hover, #biblionight button:hover {
+    opacity: 0.9;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s; }

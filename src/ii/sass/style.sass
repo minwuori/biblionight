@@ -1,0 +1,260 @@
+body
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+#biblionight
+	font-family: 'PT Sans', sans-serif
+	a
+		text-decoration: none
+	.container
+		margin: 0 auto
+		width: 920px
+		padding: 0 20px
+		text-align: center
+		display: flex
+		-webkit-flex-direction: column
+		-ms-flex-direction: column
+		flex-direction: column
+		align-items: center
+		justify-content: center
+	.clearfix:after
+		content: ""
+		display: table
+		clear: both
+	.text
+		margin: 0
+		padding: 0
+		font-size: 18px
+		width: 780px
+		color: rgba(0, 0, 0, 0.8)
+	.accent
+		font-weight: bold
+	.underline
+		text-decoration: underline
+	.blue
+		color: #2660AB
+	.red
+		color: #CC1D47
+	.white
+		color: #FFFFFF
+	.mt_20
+		margin-top: 20px
+	.mt_35
+		margin-top: 35px
+	.mt_70
+		margin-top: 70px
+	.mb_70
+		margin-bottom: 70px
+	.title
+		font-size: 30px
+		font-weight: bold 
+	.main
+		display: flex
+		-webkit-flex-direction: column
+		-ms-flex-direction: column
+		flex-direction: column
+		height: 100vh
+	.main__content
+		-webkit-flex-grow: 1
+		flex-grow: 1
+		display: flex
+		-webkit-flex-direction: column
+		-ms-flex-direction: column
+		flex-direction: column
+		.container
+			-webkit-flex-grow: 1
+			flex-grow: 1
+			height: 100%
+			
+	.main__footer
+		height: 185px
+		background-image: url("/ii/img/biblionight/bg2.png")
+		background-repeat: repeat-x
+		.container
+			height: 100%
+			
+		.text
+			text-align: center
+			font-size: 25px
+			color: #fff
+			font-weight: bold
+			margin-top: 100px
+		
+	header
+		background-color: #0060af
+		height: 90px
+		display: flex
+		justify-content: center
+		align-items: center
+		.container
+			flex-direction: row
+			flex-wrap: wrap
+			justify-content: space-between
+	.social__btns
+		list-style: none
+		padding: 0
+		margin: 0
+		a
+			font-size: 14px
+			width: 20px
+			height: 20px
+			background-image: url("/ii/img/biblionight/social.png")
+			background-repeat: no-repeat
+			opacity: 0.5
+			transition: 0.2s
+			&:hover
+				opacity: 1
+				transition: 0.2s
+	.social__btn
+		margin: 0
+		margin-right: 15px
+		padding: 0
+		display: inline-block
+		font-size: 0
+		&:last-child
+			margin-right: 0
+	.social__btn_vk
+		background-position: 0px 50%
+	.social__btn_ok
+		background-position: -49px 50%
+	.social__btn_fb
+		background-position: -97px 50%
+	.social__btn_tw
+		background-position: -145px 50%
+	.social__btn_in
+		background-position: -193px 50%
+	.social__btn_yt
+		background-position: -241px 50%
+	.date
+		width: 640px
+		display: flex
+		-webkit-flex-direction: row
+		-ms-flex-direction: row
+		flex-direction: row
+		justify-content: space-between
+	.date__item
+		border-radius: 50%
+		border: 3px solid #2660AB
+		height: 135px
+		width: 135px
+		display: flex
+		-webkit-flex-direction: column
+		-ms-flex-direction: column
+		flex-direction: column
+		-webkit-align-items: center
+		align-items: center
+		justify-content: center
+	.number
+		font-size: 50px
+	.month
+		font-size: 20px
+	.date__item_active
+		border: none
+		-webkit-box-shadow: 0px 6px 50px 0px rgba(0, 0, 0, 0.1)
+		-moz-box-shadow: 0px 6px 50px 0px rgba(0, 0, 0, 0.1)
+		box-shadow: 0px 6px 50px 0px rgba(0, 0, 0, 0.1)
+	.date__item_after
+		border: none
+		background: #2660AB 
+		opacity: 0.08
+		color: white
+	
+	.subscribe
+		#notification
+			margin-top: 20px
+			margin-bottom: 95px
+	.mail
+		line-height: 50px
+		width: 300px
+		box-sizing: border-box
+		padding: 0 10px
+		border: 2px solid #2660AB
+		border-radius: 3px
+		margin-bottom: 5px
+		font-size: 18px
+		&:focus
+			outline: none
+	.subscribeSend
+		width: 190px
+		box-sizing: border-box
+		font-size: 18px
+		line-height: 50px
+		color: #fff
+		border: 1px solid #2660AB
+		background-color: #2660AB
+		border-radius: 3px
+		cursor: pointer
+		transition: 0.2s
+		margin-left: 30px
+		&:focus
+			outline: none
+	.books
+		background-color: #edf4fb
+	.rules__text
+		text-align: left
+		list-style-type: none
+		margin: 30px 0
+		li:before
+			color: #2660AB
+			content: "•"
+			padding-right: 5px
+	.text__warning
+		text-align: left
+	.btn
+		display: inline-block
+		box-sizing: border-box
+		line-height: 50px
+		color: #fff
+		padding: 0 30px
+		border: 1px solid #2660AB
+		background-color: #2660AB
+		border-radius: 3px
+		cursor: pointer
+		transition: 0.2s
+
+	.footer
+		background-image: url("/ii/img/biblionight/bg.png")
+		background-repeat: repeat-x
+		background-position: 0 -2px
+	.footer .container
+		padding-top: 80px
+		margin-bottom: 0
+	.footer__items
+		display: flex
+		justify-content: space-between
+		width: 100%
+		
+	.footer__item
+		display: inline-block
+		margin-bottom: 20px
+	.footer__item
+		.name
+			font-size: 18px
+			color: #fff
+	.footer__item
+		.icon
+			display: inline-block
+			font-size: 14px
+			width: 34px
+			height: 34px
+			background-image: url("/ii/img/biblionight/icons.png")
+	.footer__item:nth-child(1) .icon
+		background-position: 1px 0
+	.footer__item:nth-child(2) .icon
+		background-position: -37px 0
+	.footer__item:nth-child(3) .icon
+		background-position: -78px 0
+	.footer__item:nth-child(4) .icon
+		width: 30px
+		background-position: -112px 0
+	.footer__item:hover
+		text-decoration: underline
+		color: #FFFFFF
+	.message
+		position: absolute
+		margin: 0
+		color: #CC1D47
+	.btn:hover, button:hover
+		opacity: 0.9
+		transition: 0.2s
