@@ -1,4 +1,22 @@
-document.addEventListener('DOMContentLoaded', function(){ // Аналог $(document).ready(function(){
+document.addEventListener('DOMContentLoaded', function(){ 
+	
+	var el1 = document.querySelector('.owl-eye-left'), eyeBall1 = el1.children;
+	var el2 = document.querySelector('.owl-eye-right'), eyeBall2 = el2.children;
+
+	var x1 = el1.getBoundingClientRect().left + 37, y1 = el1.getBoundingClientRect().top + 25;
+	var r = 10, x , y, x2, y2, isEyeProcessed = false;
+	document.addEventListener('mousemove', (function(e) {
+		if (!isEyeProcessed) {
+	 		isEyeProcessed = true;
+	 		var x2 = e.pageX, y2 = e.pageY;
+	 		y = ((r * (y2 - y1)) / Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1))) + y1;
+			x = (((y - y1) * (x2 - x1)) / (y2 - y1)) + x1;
+	 		eyeBall2.style.cssText = eyeBall1.style.cssText = 'margin-top: ' + (y - y1 + 1) + 'px; \ margin-left: ' + (x - x1) + 'px;';
+	 		isEyeProcessed = false;
+	 	}
+	}));
+
+
 	var today = new Date(),// получить сегодняшнюю дату
 	selectors = {
 		number: '.number',

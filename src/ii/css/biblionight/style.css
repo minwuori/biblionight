@@ -193,43 +193,79 @@ body {
     margin-top: 100px; }
 
 #biblionight .owl {
-  -webkit-animation-name: owlAnimation;
-          animation-name: owlAnimation;
+  position: relative;
+  width: 100%; }
+
+#biblionight .owl-wing-left {
+  position: absolute;
+  left: 370px;
+  top: 50px; }
+
+#biblionight .owl-wing-right {
+  position: absolute;
+  left: 506px;
+  top: 50px; }
+
+#biblionight .owl-eye {
+  position: absolute;
+  width: 22px;
+  height: 22px; }
+
+#biblionight .owl-eyeball {
+  position: absolute;
+  left: 4px;
+  top: 3px;
+  width: 6px;
+  height: 7px; }
+
+#biblionight .owl-eye-left {
+  top: 31px;
+  left: 500px;
+  margin-left: -75px; }
+
+#biblionight .owl-eye-right {
+  top: 31px;
+  left: 481px;
+  margin-left: -5px; }
+
+#biblionight .owl-wing-right {
+  -webkit-animation-name: owlWingLeftAnimation;
+          animation-name: owlWingLeftAnimation;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
-  -webkit-animation-duration: 10s;
-          animation-duration: 10s;
-  -webkit-transform-origin: 75px 81px;
-      -ms-transform-origin: 75px 81px;
-          transform-origin: 75px 81px; }
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-transform-origin: 20px 0px;
+      -ms-transform-origin: 20px 0px;
+          transform-origin: 20px 0px; }
 
-@-webkit-keyframes owlAnimation {
+@-webkit-keyframes owlWingLeftAnimation {
   from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg); }
   33% {
-    -webkit-transform: rotate(30deg);
-            transform: rotate(30deg); }
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg); }
   66% {
-    -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg); }
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg); }
   100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); } }
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg); } }
 
-@keyframes owlAnimation {
+@keyframes owlWingLeftAnimation {
   from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg); }
   33% {
-    -webkit-transform: rotate(30deg);
-            transform: rotate(30deg); }
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg); }
   66% {
-    -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg); }
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg); }
   100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); } }
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg); } }
 
 #biblionight .date {
   width: 640px;

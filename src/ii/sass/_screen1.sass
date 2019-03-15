@@ -30,17 +30,57 @@
 		color: $color_white
 		font-weight: bold
 		margin-top: 100px
+
 .owl
-	animation-name: owlAnimation
-	animation-iteration-count: infinite
-	animation-duration: 10s
-	transform-origin: 75px 81px
-@keyframes owlAnimation 
-	from 
-			transform: rotate(0deg)
-	33% 
-			transform: rotate(30deg)
-	66% 
-			transform: rotate(-30deg)
-	100% 
-			transform: rotate(0deg)
+	position: relative
+	width: 100%
+.owl-wing-left
+	position: absolute
+	left: 370px
+	top: 50px
+.owl-wing-right
+	position: absolute
+	left: 506px
+	top: 50px
+
+.owl-eye
+	position: absolute
+	
+	width: 22px
+	height: 22px
+
+.owl-eyeball
+	position: absolute
+	left: 4px
+	top: 3px
+	width: 6px
+	height: 7px
+
+.owl-eye-left
+	top: 31px
+	left: 500px
+	margin-left: -75px
+
+.owl-eye-right
+	top: 31px
+	left: 481px
+	margin-left: -5px
+
+.owl-wing-right
+  animation-name: owlWingLeftAnimation
+  animation-iteration-count: infinite 
+  animation-duration: 5s
+  transform-origin: 0px 0px
+
+@keyframes owlWingLeftAnimation
+  from
+    transform: rotate(0deg)
+
+  33%
+    transform: rotate(-15deg)
+
+  66%
+    transform: rotate(-90deg)
+
+  100%
+    transform: rotate(-10deg)
