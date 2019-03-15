@@ -1,57 +1,55 @@
 document.addEventListener('DOMContentLoaded', function(){ 
 	
-    var owl = {
-        isEyeProcessed: false, // есть ли движение
-        eyeLeft: '.owl-eye-left', // селектор левого глаза
-        eyeRight: '.owl-eye-right', // селектор правого глаза
-        radius: 6, // радиус вращения
+    function owlAnimate() {
+        
+        var owl ={
+            isEyeProcessed: false,
+            eyeLeft: '.owl-eye-left', // селектор левого глаза
+            eyeRight: '.owl-eye-right', // селектор правого глаза
+            radius: 6, // радиус вращения   
+        };
 
-
-        // инициализация
-        init: function(){
-
-            owl.eyeLeft = document.querySelector(owl.eyeLeft);
-            owl.eyeRight = document.querySelector(owl.eyeRight); 
-
-            owl.eyeBallRight = owl.eyeRight.children;
-            owl.eyeBallLeft = owl.eyeLeft.children;
-
-            owl.x = owl.eyeLeft.getBoundingClientRect().left + 37; // координата контейнера глаза слева
-            owl.y = owl.eyeLeft.getBoundingClientRect().top + 25; // координата кониейнепа глаза сверху
-
-            document.addEventListener('mousemove', (function(e) {
-                owl.cursorX = e.pageX;
-                owl.cursorY = e.pageY;
-
-                owl.followCursor();
-            }));
-        },
-
-        //слежение за курсором
-        followCursor: function(){
+        document.addEventListener('mousemove', (function(e) {
             
+            var cursorX = e.pageX,
+                cursorY = e.pageY,
+
+                eyeLeft = document.querySelector(owl.eyeLeft),
+                eyeRight = document.querySelector(owl.eyeRight),
+
+                eyeBallRight = eyeRight.children,
+                eyeBallLeft = eyeLeft.children,
+
+                coordX = eyeLeft.getBoundingClientRect().left + 37, // координата контейнера глаза слева
+                coordY = eyeLeft.getBoundingClientRect().top + 25; // координата кониейнепа глаза сверху
+ 
             if (!owl.isEyeProcessed) {
+
                 owl.isEyeProcessed = true;
-                var y = ((owl.radius * (owl.cursorY - owl.y)) / Math.sqrt((owl.cursorX - owl.x) * (owl.cursorX - owl.x) + (owl.cursorY - owl.y) * (owl.cursorY - owl.y))) + owl.y;
-                var x = (((y - owl.y) * (owl.cursorX - owl.x)) / (owl.cursorY - owl.y)) + owl.x;
-                owl.eyeBallRight[0].style.cssText = 'margin-top: ' + (y - owl.y + 1) + 'px; \ margin-left: ' + (x - owl.x) + 'px;';
-                owl.eyeBallLeft[0].style.cssText = 'margin-top: ' + (y - owl.y + 1) + 'px; \ margin-left: ' + (x - owl.x) + 'px;';
+
+                var y = ((owl.radius * (cursorY - coordY)) / Math.sqrt((cursorX - coordX) * (cursorX - coordX) + (cursorY - coordY) * (cursorY - coordY))) + coordY;
+                var x = (((y - coordY) * (cursorX - coordX)) / (cursorY - coordY)) + coordX;
+                
+                eyeBallRight[0].style.cssText = 'margin-top: ' + (y - coordY + 1) + 'px; \ margin-left: ' + (x - coordX) + 'px;';
+                eyeBallLeft[0].style.cssText = 'margin-top: ' + (y - coordY + 1) + 'px; \ margin-left: ' + (x - coordX) + 'px;';
+                
                 owl.isEyeProcessed = false;
             }
-        }
-    };
+        }));
+    }
 	
 
     function checkOnDate() {
+
         var today = new Date(),// получить сегодняшнюю дату
-        selectors = {
-            number: '.number',
-            dateActive: '.date__item_active',
-            dateDisable: '.date__item_disable'
-        },
-        circleDate = document.querySelectorAll(selectors.number), // элемент с датой
-        arrDate = [], // массив родителей элементов даты
-        date; // значение элемента с датой
+            selectors = {
+                number: '.number',
+                dateActive: '.date__item_active',
+                dateDisable: '.date__item_disable'
+            },
+            circleDate = document.querySelectorAll(selectors.number), // элемент с датой
+            arrDate = [], // массив родителей элементов даты
+            date; // значение элемента с датой
         
         if (today.getFullYear() === 2019 && today.getMonth() === 3){ // сравнить текущий год и месяц
 
@@ -73,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function(){
                 }
             }
         }
-
     };
 	
 
@@ -191,8 +188,8 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     };
 
+    owlAnimate();
     checkOnDate();
     form.initInput();
-    owl.init();
 
 });
