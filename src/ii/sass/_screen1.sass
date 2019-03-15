@@ -1,0 +1,46 @@
+
+.main
+	display: flex
+	-webkit-flex-direction: column
+	-ms-flex-direction: column
+	flex-direction: column
+	height: 100vh
+.main__content
+	-webkit-flex-grow: 1
+	flex-grow: 1
+	display: flex
+	-webkit-flex-direction: column
+	-ms-flex-direction: column
+	flex-direction: column
+	.container
+		-webkit-flex-grow: 1
+		flex-grow: 1
+		height: 100%
+		
+.main__footer
+	height: 185px
+	background-image: url("/ii/img/biblionight/bg2.png")
+	background-repeat: repeat-x
+	.container
+		height: 100%
+		
+	.text
+		text-align: center
+		font-size: 25px
+		color: $color_white
+		font-weight: bold
+		margin-top: 100px
+.owl
+	animation-name: owlAnimation
+	animation-iteration-count: infinite
+	animation-duration: 10s
+	transform-origin: 75px 81px
+@keyframes owlAnimation 
+	from 
+			transform: rotate(0deg)
+	33% 
+			transform: rotate(30deg)
+	66% 
+			transform: rotate(-30deg)
+	100% 
+			transform: rotate(0deg)

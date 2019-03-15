@@ -33,7 +33,7 @@ html(lang="ru")
 							a.social__btn.social__btn_yt(href="http://youtube.com/chitaigorod" target="_blank")
 				.main__content
 					.container
-						img(src="/ii/img/biblionight/owl.png" alt="")
+						img(src="/ii/img/biblionight/owl.png" alt="").owl
 						img(src="/ii/img/biblionight/banner.png" alt="")
 					.main__footer
 						.container
@@ -82,9 +82,9 @@ html(lang="ru")
 						| и мы напишем вам об акции 
 						span.accent за 1 день до старта.
 					img(src="/ii/img/biblionight/mails.png").mt_20
-					form#notification(action="")
-						input.mail(type="text" placeholder="Ваш e-mail")
-						input.subscribeSend(type="submit" name="Оповестить меня" value="Оповестить меня" required="Поле обязательно для заполнения")
+					form#notification(action="" method="POST" enctype="multipart/form-data" novalidate="novalidate")
+						input.mail(type="text" name="email" placeholder="Ваш e-mail" required)
+						button.subscribeSend(type="submit" name="send" value="Оповестить меня") Оповестить меня
 			
 			section.rules
 				.container

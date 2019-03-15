@@ -27,7 +27,7 @@
           </div>
         </header>
         <div class="main__content">
-          <div class="container"><img src="/ii/img/biblionight/owl.png" alt=""><img src="/ii/img/biblionight/banner.png" alt=""></div>
+          <div class="container"><img class="owl" src="/ii/img/biblionight/owl.png" alt=""><img src="/ii/img/biblionight/banner.png" alt=""></div>
           <div class="main__footer">
             <div class="container">
               <p class="text">Читайте больше! Читайте с нами!</p>
@@ -70,9 +70,9 @@
         <div class="container">
           <div class="text red title mt_70">НАПОМНИТЬ ВАМ О БИБЛИОНОЧИ?</div>
           <div class="text blue mt_20">Оставьте свой e-mail, <br>и мы напишем вам об акции <span class="accent">за 1 день до старта.</span></div><img class="mt_20" src="/ii/img/biblionight/mails.png">
-          <form id="notification" action="">
-            <input class="mail" type="text" placeholder="Ваш e-mail">
-            <input class="subscribeSend" type="submit" name="Оповестить меня" value="Оповестить меня" required="Поле обязательно для заполнения">
+          <form id="notification" action="" method="POST" enctype="multipart/form-data" novalidate="novalidate">
+            <input class="mail" type="text" name="email" placeholder="Ваш e-mail" required>
+            <button class="subscribeSend" type="submit" name="send" value="Оповестить меня">Оповестить меня</button>
           </form>
         </div>
       </section>
