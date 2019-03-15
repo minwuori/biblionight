@@ -213,8 +213,8 @@ body {
 
 #biblionight .owl-eyeball {
   position: absolute;
-  left: 4px;
-  top: 3px;
+  left: 8px;
+  top: 7px;
   width: 6px;
   height: 7px; }
 
@@ -228,44 +228,67 @@ body {
   left: 481px;
   margin-left: -5px; }
 
-#biblionight .owl-wing-right {
+#biblionight .owl:hover .owl-wing-right {
   -webkit-animation-name: owlWingLeftAnimation;
           animation-name: owlWingLeftAnimation;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
   -webkit-animation-duration: 5s;
           animation-duration: 5s;
-  -webkit-transform-origin: 20px 0px;
-      -ms-transform-origin: 20px 0px;
-          transform-origin: 20px 0px; }
+  -webkit-transform-origin: 0px 0px;
+      -ms-transform-origin: 0px 0px;
+          transform-origin: 0px 0px; }
+
+#biblionight .owl:hover .owl-wing-left {
+  -webkit-animation-name: owlWingRightAnimation;
+          animation-name: owlWingRightAnimation;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-transform-origin: 43px 0px;
+      -ms-transform-origin: 43px 0px;
+          transform-origin: 43px 0px; }
 
 @-webkit-keyframes owlWingLeftAnimation {
   from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg); }
-  33% {
-    -webkit-transform: rotate(-15deg);
-            transform: rotate(-15deg); }
-  66% {
+  15% {
     -webkit-transform: rotate(-90deg);
             transform: rotate(-90deg); }
   100% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg); } }
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); } }
 
 @keyframes owlWingLeftAnimation {
   from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg); }
-  33% {
-    -webkit-transform: rotate(-15deg);
-            transform: rotate(-15deg); }
-  66% {
+  15% {
     -webkit-transform: rotate(-90deg);
             transform: rotate(-90deg); }
   100% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg); } }
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); } }
+
+@-webkit-keyframes owlWingRightAnimation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  15% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); } }
+
+@keyframes owlWingRightAnimation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  15% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); } }
 
 #biblionight .date {
   width: 640px;

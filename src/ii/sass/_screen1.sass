@@ -45,14 +45,13 @@
 
 .owl-eye
 	position: absolute
-	
 	width: 22px
 	height: 22px
 
 .owl-eyeball
 	position: absolute
-	left: 4px
-	top: 3px
+	left: 8px
+	top: 7px
 	width: 6px
 	height: 7px
 
@@ -66,21 +65,32 @@
 	left: 481px
 	margin-left: -5px
 
-.owl-wing-right
-  animation-name: owlWingLeftAnimation
-  animation-iteration-count: infinite 
-  animation-duration: 5s
-  transform-origin: 0px 0px
+.owl:hover
+	.owl-wing-right
+		animation-name: owlWingLeftAnimation
+		animation-duration: 5s
+		transform-origin: 0px 0px
+	.owl-wing-left
+		animation-name: owlWingRightAnimation
+		animation-duration: 5s
+		transform-origin: 43px 0px
 
 @keyframes owlWingLeftAnimation
-  from
-    transform: rotate(0deg)
+	from
+		transform: rotate(0deg)
 
-  33%
-    transform: rotate(-15deg)
+	15%
+		transform: rotate(-90deg)
 
-  66%
-    transform: rotate(-90deg)
+	100%
+		transform: rotate(0deg)
 
-  100%
-    transform: rotate(-10deg)
+@keyframes owlWingRightAnimation
+	from
+		transform: rotate(0deg)
+
+	15%
+		transform: rotate(90deg)
+
+	100%
+		transform: rotate(0deg)

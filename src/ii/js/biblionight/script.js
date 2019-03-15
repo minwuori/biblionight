@@ -1,52 +1,81 @@
 document.addEventListener('DOMContentLoaded', function(){ 
 	
-	var el1 = document.querySelector('.owl-eye-left'), eyeBall1 = el1.children;
-	var el2 = document.querySelector('.owl-eye-right'), eyeBall2 = el2.children;
-
-	var x1 = el1.getBoundingClientRect().left + 37, y1 = el1.getBoundingClientRect().top + 25;
-	var r = 10, x , y, x2, y2, isEyeProcessed = false;
-	document.addEventListener('mousemove', (function(e) {
-		if (!isEyeProcessed) {
-	 		isEyeProcessed = true;
-	 		var x2 = e.pageX, y2 = e.pageY;
-	 		y = ((r * (y2 - y1)) / Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1))) + y1;
-			x = (((y - y1) * (x2 - x1)) / (y2 - y1)) + x1;
-	 		eyeBall2.style.cssText = eyeBall1.style.cssText = 'margin-top: ' + (y - y1 + 1) + 'px; \ margin-left: ' + (x - x1) + 'px;';
-	 		isEyeProcessed = false;
-	 	}
-	}));
+    var owl = {
+        isEyeProcessed: false, // есть ли движение
+        eyeLeft: '.owl-eye-left', // селектор левого глаза
+        eyeRight: '.owl-eye-right', // селектор правого глаза
+        radius: 6, // радиус вращения
 
 
-	var today = new Date(),// получить сегодняшнюю дату
-	selectors = {
-		number: '.number',
-		dateActive: '.date__item_active',
-		dateDisable: '.date__item_disable'
-	},
-	circleDate = document.querySelectorAll(selectors.number), // элемент с датой
-	arrDate = [], // массив родителей элементов даты
-	date; // значение элемента с датой
+        // инициализация
+        init: function(){
+
+            owl.eyeLeft = document.querySelector(owl.eyeLeft);
+            owl.eyeRight = document.querySelector(owl.eyeRight); 
+
+            owl.eyeBallRight = owl.eyeRight.children;
+            owl.eyeBallLeft = owl.eyeLeft.children;
+
+            owl.x = owl.eyeLeft.getBoundingClientRect().left + 37; // координата контейнера глаза слева
+            owl.y = owl.eyeLeft.getBoundingClientRect().top + 25; // координата кониейнепа глаза сверху
+
+            document.addEventListener('mousemove', (function(e) {
+                owl.cursorX = e.pageX;
+                owl.cursorY = e.pageY;
+
+                owl.followCursor();
+            }));
+        },
+
+        //слежение за курсором
+        followCursor: function(){
+            
+            if (!owl.isEyeProcessed) {
+                owl.isEyeProcessed = true;
+                var y = ((owl.radius * (owl.cursorY - owl.y)) / Math.sqrt((owl.cursorX - owl.x) * (owl.cursorX - owl.x) + (owl.cursorY - owl.y) * (owl.cursorY - owl.y))) + owl.y;
+                var x = (((y - owl.y) * (owl.cursorX - owl.x)) / (owl.cursorY - owl.y)) + owl.x;
+                owl.eyeBallRight[0].style.cssText = 'margin-top: ' + (y - owl.y + 1) + 'px; \ margin-left: ' + (x - owl.x) + 'px;';
+                owl.eyeBallLeft[0].style.cssText = 'margin-top: ' + (y - owl.y + 1) + 'px; \ margin-left: ' + (x - owl.x) + 'px;';
+                owl.isEyeProcessed = false;
+            }
+        }
+    };
 	
-	if (today.getFullYear() === 2019 && today.getMonth() === 3){ // сравнить текущий год и месяц
 
-		for (var i = 0; i < circleDate.length; i++){
+    function checkOnDate() {
+        var today = new Date(),// получить сегодняшнюю дату
+        selectors = {
+            number: '.number',
+            dateActive: '.date__item_active',
+            dateDisable: '.date__item_disable'
+        },
+        circleDate = document.querySelectorAll(selectors.number), // элемент с датой
+        arrDate = [], // массив родителей элементов даты
+        date; // значение элемента с датой
+        
+        if (today.getFullYear() === 2019 && today.getMonth() === 3){ // сравнить текущий год и месяц
 
-			date = +circleDate[i].innerHTML; // преобразовать значение даты в число
-			arrDate.push(circleDate[i].parentNode); // закинуть родительские элементы даты в массив
+            for (var i = 0; i < circleDate.length; i++){
 
-			if (today.getDate() >= date){ // сравнить дни
+                date = +circleDate[i].innerHTML; // преобразовать значение даты в число
+                arrDate.push(circleDate[i].parentNode); // закинуть родительские элементы даты в массив
 
-				if (arrDate[i].classList.contains(selectors.dateActive.substring(1))){ // проверить имеется ли класс активности
+                if (today.getDate() >= date){ // сравнить дни
 
-					arrDate[i].classList.add(selectors.dateDisable.substring(1)); // навесить класс прошедшей даты
+                    if (arrDate[i].classList.contains(selectors.dateActive.substring(1))){ // проверить имеется ли класс активности
 
-				} else {
+                        arrDate[i].classList.add(selectors.dateDisable.substring(1)); // навесить класс прошедшей даты
 
-					arrDate[i].classList.add(selectors.dateActive.substring(1)); // навесить класс активности даты
-				}
-			}
-		}
-	}
+                    } else {
+
+                        arrDate[i].classList.add(selectors.dateActive.substring(1)); // навесить класс активности даты
+                    }
+                }
+            }
+        }
+
+    };
+	
 
 	var form = {
         inputSelector: '.mail', // описание инпута
@@ -162,6 +191,8 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     };
 
+    checkOnDate();
     form.initInput();
+    owl.init();
 
 });
