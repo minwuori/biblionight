@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function(){
             arrDate = [], // массив родителей элементов даты
             date; // значение элемента с датой
         
-        if (today.getFullYear() === 2019 && today.getMonth() === 3){ // сравнить текущий год и месяц
+        if (today.getFullYear() === 2019 && today.getMonth() === 2){ // сравнить текущий год и месяц
 
             for (var i = 0; i < circleDate.length; i++){
 
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
                 if (today.getDate() >= date){ // сравнить дни
 
-                    if (arrDate[i].classList.contains(selectors.dateActive.substring(1))){ // проверить имеется ли класс активности
+                    if (today.getDate() > date){ // проверить имеется ли класс активности
 
                         arrDate[i].classList.add(selectors.dateDisable.substring(1)); // навесить класс прошедшей даты
 
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
             if(form.isValid){
                 form.notification.submit();
-                //здесь добавить что сделать с контентом
+                // здесь добавить что сделать с контентом после отправки формы
                 return;
             }
 
@@ -188,8 +188,28 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     };
 
+
+	var btns = document.querySelectorAll('.rules-content');
+	btns.forEach(function(btn){
+		btn.addEventListener('click', function(){
+			var rules = btn.children;
+			console.log(rules)
+			for (var i = 0; i < rules.length; i++){
+				if (btn.querySelector('.rules-hide')) {
+					console.log(this.children);
+					rules[1].classList.add('rules-show')
+				} else {
+					rules[i].classList.remove('rules-show')
+				}
+			}
+			
+		});
+	});
+
+
     owlAnimate();
     checkOnDate();
     form.initInput();
+
 
 });

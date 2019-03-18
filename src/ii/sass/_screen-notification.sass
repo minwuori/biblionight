@@ -1,19 +1,22 @@
 
 .subscribe
 	#notification
-		margin-top: 20px
-		margin-bottom: 95px
+		margin-top: 10px
+.mails
+	max-width: 711px
 .mail
 	line-height: 50px
 	width: 300px
 	box-sizing: border-box
 	padding: 0 10px
-	border: 2px solid $color_blue
+	border: 3px solid $color_blue
 	border-radius: 3px
 	margin-bottom: 5px
 	font-size: 18px
 	&:focus
 		outline: none
+	&::placeholder
+		color: $color_blue
 .error-message
 	margin-top: 10px
 	color: $color_red

@@ -1,24 +1,7 @@
-
-.main
-	display: flex
-	-webkit-flex-direction: column
-	-ms-flex-direction: column
-	flex-direction: column
-	height: 100vh
-.main__content
-	-webkit-flex-grow: 1
-	flex-grow: 1
-	display: flex
-	-webkit-flex-direction: column
-	-ms-flex-direction: column
-	flex-direction: column
-	.container
-		-webkit-flex-grow: 1
-		flex-grow: 1
-		height: 100%
-		
+.banner
+	max-width: 55%	
 .main__footer
-	height: 185px
+	height: 235px
 	background-image: url("/ii/img/biblionight/bg2.png")
 	background-repeat: repeat-x
 	.container
@@ -34,11 +17,29 @@
 .owl
 	position: relative
 	width: 100%
+	margin-top: 50px
+	margin-bottom: 10px
+.owl-container
+	max-width: 190px
+	margin: 0 auto
+.owl-container:hover
+	.owl-wing-right
+		animation-name: owlWingLeftAnimation
+		animation-duration: 1s
+		transform-origin: 0px 0px
+	.owl-wing-left
+		animation-name: owlWingRightAnimation
+		animation-duration: 1s
+		transform-origin: 43px 0px
+.owl-body
+	max-width: 104px
 .owl-wing-left
+	max-width: 43px
 	position: absolute
 	left: 370px
 	top: 50px
 .owl-wing-right
+	max-width: 43px
 	position: absolute
 	left: 506px
 	top: 50px
@@ -65,15 +66,7 @@
 	left: 481px
 	margin-left: -5px
 
-.owl:hover
-	.owl-wing-right
-		animation-name: owlWingLeftAnimation
-		animation-duration: 5s
-		transform-origin: 0px 0px
-	.owl-wing-left
-		animation-name: owlWingRightAnimation
-		animation-duration: 5s
-		transform-origin: 43px 0px
+
 
 @keyframes owlWingLeftAnimation
 	from
