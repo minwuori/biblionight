@@ -6,22 +6,21 @@ ol
 li:before 
 	counter-increment: li
 	content: counters(li,".") ". "
-.list-predbiblionight li:nth-child(6):after
+.rules__list
+	width: 100%
+	text-align: left
+.rules__content
+	width: 100%
+.rules__list_predbiblionight li:nth-child(6):after
 	content: "*"
 	position: relative
-	left: -500px
-	top: -15px
-.list-biblionight li:nth-child(4):after
+	left: -358px
+	top: -19px
+.rules__list_biblionight li:nth-child(4):after
 	content: "*"
 	position: relative
-	left: -500px
-	top: -15px
-.rules__text
-	text-align: left
-.text__warning
-	text-align: left
-.rules-hide
+	left: -358px
+	top: -19px
+.rules__hide
+	transition: 1s ease-in-out
 	display: none
-.rules-show
-	display: block
-	transition: 2.5s

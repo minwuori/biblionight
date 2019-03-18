@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function(){
             arrDate = [], // массив родителей элементов даты
             date; // значение элемента с датой
         
-        if (today.getFullYear() === 2019 && today.getMonth() === 2){ // сравнить текущий год и месяц
+        if (today.getFullYear() === 2019 && today.getMonth() === 3){ // сравнить текущий год и месяц
 
             for (var i = 0; i < circleDate.length; i++){
 
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
             form.notification.addEventListener('input', form.onChange)
 
-            var submitButton = document.querySelector('.subscribeSend');
+            var submitButton = document.querySelector('.send');
             submitButton.addEventListener('click', form.onSubmit);
 
             form.notification.addEventListener('submit', function (e) {
@@ -188,28 +188,36 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     };
 
+    function showRules(){
 
-	var btns = document.querySelectorAll('.rules-content');
-	btns.forEach(function(btn){
-		btn.addEventListener('click', function(){
-			var rules = btn.children;
-			console.log(rules)
-			for (var i = 0; i < rules.length; i++){
-				if (btn.querySelector('.rules-hide')) {
-					console.log(this.children);
-					rules[1].classList.add('rules-show')
-				} else {
-					rules[i].classList.remove('rules-show')
-				}
-			}
-			
-		});
-	});
+        var btns = document.querySelectorAll('.rules__content');
+
+        btns.forEach(function(btn){
+
+            btn.addEventListener('click', function(evt){
+
+                evt.preventDefault();
+                var rules = btn.querySelector('.rules__list');
+                
+                if (btn.querySelector('.rules__hide')) {
+
+                    rules.classList.remove('rules__hide')
+
+                } else{
+
+                    rules.classList.add('rules__hide')
+                }
+                
+            });
+        });
+    }
+	
 
 
     owlAnimate();
     checkOnDate();
     form.initInput();
+    showRules();
 
 
 });

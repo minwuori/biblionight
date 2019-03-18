@@ -140,7 +140,7 @@ body {
     margin-right: 0; }
 
 #biblionight .social-list__item_vk {
-  background-position: 0px 50%; }
+  background-position: -1px 50%; }
 
 #biblionight .social-list__item_ok {
   background-position: -49px 50%; }
@@ -344,7 +344,7 @@ body {
 #biblionight .bask {
   max-width: 380px; }
 
-#biblionight .subscribe #notification {
+#biblionight #notification {
   margin-top: 10px; }
 
 #biblionight .mails {
@@ -390,37 +390,36 @@ body {
   counter-increment: li;
   content: counters(li, ".") ". "; }
 
-#biblionight .list-predbiblionight li:nth-child(6):after {
-  content: "*";
-  position: relative;
-  left: -500px;
-  top: -15px; }
-
-#biblionight .list-biblionight li:nth-child(4):after {
-  content: "*";
-  position: relative;
-  left: -500px;
-  top: -15px; }
-
-#biblionight .rules__text {
+#biblionight .rules__list {
+  width: 100%;
   text-align: left; }
 
-#biblionight .text__warning {
-  text-align: left; }
+#biblionight .rules__content {
+  width: 100%; }
 
-#biblionight .rules-hide {
+#biblionight .rules__list_predbiblionight li:nth-child(6):after {
+  content: "*";
+  position: relative;
+  left: -358px;
+  top: -19px; }
+
+#biblionight .rules__list_biblionight li:nth-child(4):after {
+  content: "*";
+  position: relative;
+  left: -358px;
+  top: -19px; }
+
+#biblionight .rules__hide {
+  -webkit-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
   display: none; }
-
-#biblionight .rules-show {
-  display: block;
-  -webkit-transition: 2.5s;
-  -o-transition: 2.5s;
-  transition: 2.5s; }
 
 #biblionight .btn {
   display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-size: 18px;
   line-height: 50px;
   color: #FFFFFF;
   padding: 0 30px;
@@ -433,14 +432,14 @@ body {
   -o-transition: 0.2s;
   transition: 0.2s; }
 
-#biblionight .btn:hover, #biblionight .subscribeSend:hover {
+#biblionight .btn:hover, #biblionight .send:hover {
   color: #2660AB;
   background-color: #FFFFFF;
   -webkit-transition: 0.2s ease-in-out;
   -o-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out; }
 
-#biblionight .subscribeSend {
+#biblionight .send {
   width: 190px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -456,7 +455,7 @@ body {
   -o-transition: 0.2s;
   transition: 0.2s;
   margin-left: 30px; }
-  #biblionight .subscribeSend:focus {
+  #biblionight .send:focus {
     outline: none; }
 
 #biblionight .footer {

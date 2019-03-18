@@ -5,7 +5,6 @@ html(lang="ru")
 		title Библионочь 2019. Мы любим книги, мы выбираем чтение!
 		link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic" rel="stylesheet" type="text/css")
 		link(rel="stylesheet" href="/ii/css/biblionight/style.css")
-		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
 		script(type="text/javascript" src="/ii/js/biblionight/script.js")
 	body
 		noscript
@@ -35,13 +34,13 @@ html(lang="ru")
 				.container
 					.owl
 						.owl-container
-							img(src="/ii/img/biblionight/bodyOwl.svg" alt="").owl-body
-							img(src="/ii/img/biblionight/wingLeft.svg" alt="").owl-wing-left
-							img(src="/ii/img/biblionight/wingRight.svg" alt="").owl-wing-right
+							img.owl-body(src="/ii/img/biblionight/bodyOwl.svg" alt="")
+							img.owl-wing-left(src="/ii/img/biblionight/wingLeft.svg" alt="")
+							img.owl-wing-right(src="/ii/img/biblionight/wingRight.svg" alt="")
 						.owl-eye-left.owl-eye
-							img(src="/ii/img/biblionight/eye.svg" alt="").owl-eyeball
+							img.owl-eyeball(src="/ii/img/biblionight/eye.svg" alt="")
 						.owl-eye-right.owl-eye
-							img(src="/ii/img/biblionight/eye.svg" alt="").owl-eyeball
+							img.owl-eyeball(src="/ii/img/biblionight/eye.svg" alt="")
 					img.banner(src="/ii/img/biblionight/title.svg" alt="")
 				.main__footer.mt_20
 					.container
@@ -83,7 +82,7 @@ html(lang="ru")
 						span.accent скидкой 20%.
 					img.bask.mt_20(src="/ii/img/biblionight/bask.svg")
 					a.btn(href="/catalog/books/").mb_70.mt_10 Выбрать книги
-			section.subscribe
+			section.notification
 				.container
 					.text.red.title.mt_70 НАПОМНИТЬ ВАМ О БИБЛИОНОЧИ?
 					.text.blue.mt_20
@@ -94,15 +93,15 @@ html(lang="ru")
 					img.mails(src="/ii/img/biblionight/mails.svg")
 					form#notification(action="" method="POST" enctype="multipart/form-data" novalidate="novalidate")
 						input.mail(type="text" name="email" placeholder="Ваш e-mail" required)
-						button.subscribeSend(type="submit" name="send" value="Отправить") Отправить
+						button.send(type="submit" name="send" value="Отправить") Отправить
 					.text.gray.fs_14.mt_20 Указывая e-mail в настоящем поле предоставляю согласие на обработку персональных данных**
 			
 			section.rules
 				.container
 					.text.blue.title.mt_70 ПРАВИЛА АКЦИЙ
-					.rules-content
-						.text.blue.underline.mt_35 Правила акции «ПРЕДБИБЛИОНОЧЬ»
-						ol.text.blue.rules__text.mt_20.fs_14.list-predbiblionight.rules-hide
+					.rules__content
+						a.text.blue.underline.mt_35(href="#") Правила акции «ПРЕДБИБЛИОНОЧЬ»
+						ol.text.blue.rules__list.mt_20.fs_14.rules__list_predbiblionight.rules__hide
 							li Акция проводится во всех розничных магазинах сети «Читай-город» (далее – «Магазины участники»), а также в Интернет-магазине (
 								a.blue(href="/") www.chitai-gorod.ru
 								| , ООО «Новый Книжный Центр», 127322, г. Москва, Огородный проезд, дом 20, строение 27, помещение 14, ОГРН 1027700282763) (далее – «Интернет-магазин»)
@@ -139,9 +138,9 @@ html(lang="ru")
 								a.blue(href="/") www.chitai-gorod.ru.
 							li.mb_35 Совершение лицом действий, направленных на участие в Акции, является выражением согласия такого лица с настоящими Правилами в полном объёме.
 					
-					.rules-content
-						.text.blue.underline Правила акции «БИБЛИОНОЧЬ»
-						ol.text.blue.rules__text.mt_20.fs_14.list-biblionight.rules-hide
+					.rules__content
+						a.text.blue.underline(href="#") Правила акции «БИБЛИОНОЧЬ»
+						ol.text.blue.rules__list.mt_20.fs_14.rules__list_biblionight.rules__hide
 							li Акция проводится во всех розничных магазинах сети «Читай-город» (далее – «Магазины участники»), а также в Интернет-магазине (
 								a.blue(href="/") www.chitai-gorod.ru
 								| , ООО «Новый Книжный Центр», 127322, г. Москва, Огородный проезд, дом 20, строение 27, помещение 14, ОГРН 1027700282763) (далее – «Интернет-магазин»)
@@ -178,7 +177,7 @@ html(lang="ru")
 							li Совершение лицом действий, направленных на участие в Акции, является выражением согласия такого лица с настоящими Правилами в полном объёме.
 
 
-					.text.rules__text.gray.mt_35.fs_14.mb_70 **Настоящим предоставляю ООО «Новый Книжный Центр» свое согласие на обработку (сбор, систематизацию, накопление, хранение, уточнение, использование, обезличивание, передачу (трансграничную передачу, распространение, предоставление, доступ), блокирование, уничтожение) персональных данных для целей продажи товаров, предоставления справочной информации, идентификации участника в Программе лояльности, обеспечения процедуры учета накопления и использования баллов, скидок, предоставления сервисных услуг, определения победителя в проводимых акциях, сбора мнения о работе магазинов сетей «Читай-город» и «Гоголь-Моголь», направления рекламных сообщений (в т.ч., о проводимых акциях, мероприятиях, специальных предложениях через любые каналы коммуникации, в т.ч. по электронной почте, SMS, телефону). Настоящим Вы даете согласие на передачу Ваших персональных данных третьим лицам для их обработки в соответствии с целями, предусмотренными настоящим согласием. Обработка персональных данных может осуществляться с использованием и (или) без использования средств автоматизации в соответствии с действующим законодательством РФ.
+					.text.rules__list.gray.mt_35.fs_14.mb_70 **Настоящим предоставляю ООО «Новый Книжный Центр» свое согласие на обработку (сбор, систематизацию, накопление, хранение, уточнение, использование, обезличивание, передачу (трансграничную передачу, распространение, предоставление, доступ), блокирование, уничтожение) персональных данных для целей продажи товаров, предоставления справочной информации, идентификации участника в Программе лояльности, обеспечения процедуры учета накопления и использования баллов, скидок, предоставления сервисных услуг, определения победителя в проводимых акциях, сбора мнения о работе магазинов сетей «Читай-город» и «Гоголь-Моголь», направления рекламных сообщений (в т.ч., о проводимых акциях, мероприятиях, специальных предложениях через любые каналы коммуникации, в т.ч. по электронной почте, SMS, телефону). Настоящим Вы даете согласие на передачу Ваших персональных данных третьим лицам для их обработки в соответствии с целями, предусмотренными настоящим согласием. Обработка персональных данных может осуществляться с использованием и (или) без использования средств автоматизации в соответствии с действующим законодательством РФ.
 						br
 						| Настоящее согласие дается Вами с момента указания электронной почты на сайте https://www.chitai-gorod.ru/biblionight/ , на весь период Вашего участия в программе лояльности и может быть отозвано в любой момент путем направления письменного заявления ООО «Новый Книжный Центр» (127322, г. Москва, Огородный проезд, д.20, стр.27, пом. 14). Отзыв настоящего согласия будет автоматически прекращать Ваше участие в Программе лояльности, Карта участника будет заблокирована, накопленные бонусы, скидка, баллы, преференции будут аннулированы.». 
 
