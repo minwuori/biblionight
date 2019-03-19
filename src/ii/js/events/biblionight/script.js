@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){ 
 	
+	//анимирование совы
     function owlAnimate() {
         
         var owl ={
@@ -38,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }));
     }
 	
-
+    //проверка на дату
     function checkOnDate() {
 
         var today = new Date(),// получить сегодняшнюю дату
@@ -73,11 +74,13 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     };
 	
-
+    //отправка формы
 	var form = {
         inputSelector: '.mail', // описание инпута
         errorContainerSelector: '.error-message', // селектор контейнера с ошибкой
         isValid: false, // валидная ли форма
+        sectionNotification: '.notification',
+        sectionConfirmation: '.confirmation',
         regular:{
             'email': /^.+@.+[.].{2,}$/i // регулярка для валидации
         },
@@ -91,6 +94,8 @@ document.addEventListener('DOMContentLoaded', function(){
         initInput: function (){
             form.notification = document.querySelector('#notification');
             form.input = form.notification.querySelector('input');
+            form.sectionNotification = document.querySelector('.notification');
+            form.sectionConfirmation = document.querySelector('.confirmation');
 
             form.notification.addEventListener('input', form.onChange)
 
@@ -125,8 +130,12 @@ document.addEventListener('DOMContentLoaded', function(){
 			form.validate(form.input);
 
             if(form.isValid){
-                form.notification.submit();
                 // здесь добавить что сделать с контентом после отправки формы
+                form.sectionNotification.style.display = 'none';
+                form.sectionConfirmation.style.display = 'block';
+                
+                //form.notification.submit();
+
                 return;
             }
 
@@ -188,6 +197,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     };
 
+    // скрыть/показать правила
     function showRules(){
 
         var btns = document.querySelectorAll('.rules__content');
@@ -196,16 +206,19 @@ document.addEventListener('DOMContentLoaded', function(){
 
             btn.addEventListener('click', function(evt){
 
-                evt.preventDefault();
                 var rules = btn.querySelector('.rules__list');
                 
-                if (btn.querySelector('.rules__hide')) {
+                if (btn.querySelector('.show')) {
 
-                    rules.classList.remove('rules__hide')
+                    rules.classList.remove('show');
+                    setTimeout(function(){
+                    	rules.classList.remove('mt_20')
+                    }, 915)
 
                 } else{
 
-                    rules.classList.add('rules__hide')
+                    rules.classList.add('show', 'mt_20')
+
                 }
                 
             });

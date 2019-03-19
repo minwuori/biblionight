@@ -1,9 +1,16 @@
-
+.page-wrap 
+	display: inline-flex
+	flex-direction: column
+	min-height: 100vh
+	min-width: 100%
+	position: relative
+	overflow: hidden
+	vertical-align: top
 a
 	text-decoration: none
 .container
 	margin: 0 auto
-	width: 920px
+	width: 960px
 	padding: 0 20px
 	text-align: center
 	display: flex
@@ -16,7 +23,7 @@ a
 	margin: 0
 	padding: 0
 	font-size: 18px
-	width: 780px
+	max-width: 805px
 	color: $color_black
 .accent
 	font-weight: bold
@@ -47,3 +54,8 @@ a
 .title
 	font-size: 30px
 	font-weight: bold
+.hidden
+	display: none
+.footnote
+	font-size: 14px
+	color: $color_gray

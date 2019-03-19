@@ -20,7 +20,7 @@ gulp.task('sass', function(){ // Создаем таск sass
         .pipe(using({prefix:'Using file', path:'relative', color:'yellow', filesize:true})) //отображение в консоли изменений 
         .pipe(sass()) // Преобразуем sass в CSS посредством gulp-sass
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
-        .pipe(gulp.dest('src/ii/css/biblionight/')) // Выгружаем результата в папку src/css
+        .pipe(gulp.dest('src/ii/css/events/biblionight/')) // Выгружаем результата в папку src/css
         .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
 });
 

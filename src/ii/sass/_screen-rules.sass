@@ -6,21 +6,42 @@ ol
 li:before 
 	counter-increment: li
 	content: counters(li,".") ". "
+.rules__title
+	color: $color_blue
+	background: none
+	border: none
+	outline: none
+	text-decoration: underline
+	font-size: 18px
+	font-family: 'PT Sans', sans-serif
+	padding: 0 
+	cursor: pointer
 .rules__list
 	width: 100%
+	transition: max-height 1s 
+	overflow-y: hidden
 	text-align: left
-.rules__content
-	width: 100%
-.rules__list_predbiblionight li:nth-child(6):after
-	content: "*"
-	position: relative
-	left: -358px
-	top: -19px
-.rules__list_biblionight li:nth-child(4):after
-	content: "*"
-	position: relative
-	left: -358px
-	top: -19px
-.rules__hide
-	transition: 1s ease-in-out
-	display: none
+	max-height: 0
+	font-size: 14px
+	padding-left: 7px
+.rules__list_predbiblionight 
+	li:nth-child(6)
+		position: relative
+	li:nth-child(6):after
+		content: "*"
+		position: absolute
+		left: -7px
+		top: 0
+.rules__list_biblionight 
+	li:nth-child(4)
+		position: relative
+	li:nth-child(4):after
+		content: "*"
+		position: absolute
+		left: -7px
+		top: 0
+.show
+	max-height: 1000px
+.rules
+	.footnote
+		text-align: left
