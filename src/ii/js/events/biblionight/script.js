@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 form.sectionNotification.style.display = 'none';
                 form.sectionConfirmation.style.display = 'block';
                 
-                //form.notification.submit();
+                form.notification.submit();
 
                 return;
             }
