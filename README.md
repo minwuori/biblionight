@@ -1,1 +1,1 @@
-<a href="https://minwuori.github.io/biblionight/index.html">DEMO</a>
+<a href="https://minwuori.github.io/biblionight/src/index.html">DEMO</a>
