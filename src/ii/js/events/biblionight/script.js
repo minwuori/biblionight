@@ -46,12 +46,12 @@ document.addEventListener('DOMContentLoaded', function(){
             selectors = {
                 number: '.number',
                 dateActive: '.date__item_active',
-                dateDisable: '.date__item_disable'
+                dateDisable: '.date__item_disable',
+                dateDescription: '.date__description'
             },
             circleDate = document.querySelectorAll(selectors.number), // элемент с датой
             arrDate = [], // массив родителей элементов даты
             date; // значение элемента с датой
-        
         if (today.getFullYear() === 2019 && today.getMonth() === 3){ // сравнить текущий год и месяц
 
             for (var i = 0; i < circleDate.length; i++){
@@ -68,11 +68,59 @@ document.addEventListener('DOMContentLoaded', function(){
                     } else {
 
                         arrDate[i].classList.add(selectors.dateActive.substring(1)); // навесить класс активности даты
+                        switch (date){
+                            case 16 :
+                                document.querySelector(selectors.dateDescription).innerHTML = '16 апреля – «ПредБиблионочь» для держателей Карты Любимого Покупателя';
+                                break;
+                            case 17 :
+                                document.querySelector(selectors.dateDescription).innerHTML = '17 апреля – «ПредБиблионочь» для держателей Карты Любимого Покупателя';
+                                break;
+                            case 18 :
+                                document.querySelector(selectors.dateDescription).innerHTML = '18 апреля – «ПредБиблионочь» для держателей Карты Любимого Покупателя';
+                                break;
+                            case 19 :
+                                document.querySelector(selectors.dateDescription).innerHTML = '19 апреля – «Библионочь» для всех любителей книг';
+                                break;
+                        }
                     }
+                } else {
+
                 }
             }
         }
     };
+
+    //поведение при наведении мыши на даты
+    var calendar = document.querySelectorAll('.date__item');
+    calendar.forEach(function(date) {
+        date.addEventListener("mouseenter", function(){
+            if (!date.classList.contains('date__item_disable')) {
+                date.classList.add('date__item_hover');
+                switch (+date.children[0].innerHTML){
+                    case 16 : 
+                        document.querySelector('.date__description').innerHTML = '16 апреля – «ПредБиблионочь» для держателей Карты Любимого Покупателя';
+                        break;
+                    case 17 :
+                        document.querySelector('.date__description').innerHTML = '17 апреля – «ПредБиблионочь» для держателей Карты Любимого Покупателя';
+                        break;
+                    case 18 :
+                        document.querySelector('.date__description').innerHTML = '18 апреля – «ПредБиблионочь» для держателей Карты Любимого Покупателя';
+                        break;
+                    case 19 :
+                        document.querySelector('.date__description').innerHTML = '19 апреля – «Библионочь» для всех любителей книг';
+                        break;
+                }
+            }
+            
+        });
+        date.addEventListener("mouseleave", function(){
+            document.querySelector('.date__description').innerHTML = '';
+            checkOnDate();
+            date.classList.remove('date__item_hover');
+
+        })
+    });
+                
 	
     //отправка формы
 	var form = {
